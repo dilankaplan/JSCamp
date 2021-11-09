@@ -9,10 +9,16 @@ let cart = [
 cart.push({
     id: 7, productName: "ruhsat", quantity: 1, unitPrice: 20
 })
+console.log("<ul>")
+cart.map(product=>{
+console.log("<li>"  + product.productName + " : " + product.unitPrice * product.quantity + "</li>" )
+})
+let quantityOver2=cart.filter(product=> product.quantity>2)
+console.log(quantityOver2)
 
-cart.map(product=>console.log(product.productName))
 
-
+let total = cart.reduce((acc,product)=> acc+ product.unitPrice,0)
+console.log(total)
 
 
 // ----------------------------------------------------------
